@@ -1,4 +1,6 @@
 import { Navigate, useRoutes, BrowserRouter } from "react-router-dom";
+import Home from "../page/Home";
+import React from "react";
 // layouts
 // import DashboardLayout from "../layouts/dashboard";
 
@@ -20,7 +22,7 @@ const Router = () => {
       ],
     },
     // global
-    // { path: "/", element: <Login /> },
+    { path: "/", element: <Home /> },
   ]);
 };
 
