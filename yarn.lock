@@ -2325,6 +2325,13 @@
     "@types/scheduler" "*"
     "csstype" "^3.0.2"
 
+"@types/redux-logger@^3.0.8":
+  "integrity" "sha512-cwYhVbYNgH01aepeMwhd0ABX6fhVB2rcQ9m80u8Fl50ZODhsZ8RhQArnLTkE7/Zrfq4Sz/taNoF7DQy9pCZSKg=="
+  "resolved" "https://registry.npmjs.org/@types/redux-logger/-/redux-logger-3.0.9.tgz"
+  "version" "3.0.9"
+  dependencies:
+    "redux" "^4.0.0"
+
 "@types/resolve@1.17.1":
   "integrity" "sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw=="
   "resolved" "https://registry.npmjs.org/@types/resolve/-/resolve-1.17.1.tgz"
@@ -2873,6 +2880,18 @@
   dependencies:
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
+
+"apexcharts@^3.18.0", "apexcharts@^3.33.0":
+  "integrity" "sha512-gOc0qZijuomtXTThLbb0sKn+mZJkVQADyK/Zw9vQ0JjKVbMYxzek61xk40hT49i1Sq6/MUqsz0WgUXYpqqf8Mg=="
+  "resolved" "https://registry.npmjs.org/apexcharts/-/apexcharts-3.33.0.tgz"
+  "version" "3.33.0"
+  dependencies:
+    "svg.draggable.js" "^2.2.2"
+    "svg.easing.js" "^2.0.0"
+    "svg.filter.js" "^2.0.2"
+    "svg.pathmorphing.js" "^0.1.3"
+    "svg.resize.js" "^1.4.3"
+    "svg.select.js" "^3.0.1"
 
 "arg@^5.0.1":
   "integrity" "sha512-e0hDa9H2Z9AwFkk2qDlwhoMYE4eToKarchkQHovNdLTCYMHZHeRjI71crOh+dio4K6u1IcwubQqo79Ga4CyAQA=="
@@ -4001,6 +4020,11 @@
   "integrity" "sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw="
   "resolved" "https://registry.npmjs.org/dedent/-/dedent-0.7.0.tgz"
   "version" "0.7.0"
+
+"deep-diff@^0.3.5":
+  "integrity" "sha1-wB3mPvsO7JeYgB1Ax+Da4ltYLIQ="
+  "resolved" "https://registry.npmjs.org/deep-diff/-/deep-diff-0.3.8.tgz"
+  "version" "0.3.8"
 
 "deep-equal@^1.0.1":
   "integrity" "sha512-yd9c5AdiqVcR+JjcwUQb9DkhJc8ngNr0MahEBGvDiJw8puWab2yZlh+nkasOnZP+EGTAP6rRp2JzJhJZzvNF8g=="
@@ -7986,7 +8010,7 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
 
-"react-redux@^7.2.1 || ^8.0.0-beta", "react-redux@^7.2.6":
+"react-redux@^7.2.1 || ^8.0.0-beta", "react-redux@^7.2.4":
   "integrity" "sha512-10RPdsz0UUrRL1NZE0ejTkucnclYSgXp5q+tB5SWx2qeG2ZJQJyymgAhwKy73yiL/13btfB6fPr+rgbMAaZIAQ=="
   "resolved" "https://registry.npmjs.org/react-redux/-/react-redux-7.2.6.tgz"
   "version" "7.2.6"
@@ -8135,6 +8159,13 @@
     "indent-string" "^4.0.0"
     "strip-indent" "^3.0.0"
 
+"redux-logger@^3.0.6":
+  "integrity" "sha1-91VZZvMJjzyIYExEnPC69XeCdL8="
+  "resolved" "https://registry.npmjs.org/redux-logger/-/redux-logger-3.0.6.tgz"
+  "version" "3.0.6"
+  dependencies:
+    "deep-diff" "^0.3.5"
+
 "redux-persist@^6.0.0":
   "integrity" "sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ=="
   "resolved" "https://registry.npmjs.org/redux-persist/-/redux-persist-6.0.0.tgz"
@@ -8152,7 +8183,7 @@
   "resolved" "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.4.1.tgz"
   "version" "2.4.1"
 
-"redux@^4", "redux@^4.0.0", "redux@^4.0.4", "redux@^4.1.2", "redux@>4.0.0":
+"redux@^4", "redux@^4.0.0", "redux@^4.0.4", "redux@^4.0.5", "redux@^4.1.2", "redux@>4.0.0":
   "integrity" "sha512-SH8PglcebESbd/shgf6mii6EIoRM0zrQyjcuQ+ojmfxjTtE0z9Y8pa62iA/OJ58qjP6j27uyW4kUF4jl/jd6sw=="
   "resolved" "https://registry.npmjs.org/redux/-/redux-4.1.2.tgz"
   "version" "4.1.2"
@@ -9034,6 +9065,61 @@
   "integrity" "sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ=="
   "resolved" "https://registry.npmjs.org/svg-parser/-/svg-parser-2.0.4.tgz"
   "version" "2.0.4"
+
+"svg.draggable.js@^2.2.2":
+  "integrity" "sha512-JzNHBc2fLQMzYCZ90KZHN2ohXL0BQJGQimK1kGk6AvSeibuKcIdDX9Kr0dT9+UJ5O8nYA0RB839Lhvk4CY4MZw=="
+  "resolved" "https://registry.npmjs.org/svg.draggable.js/-/svg.draggable.js-2.2.2.tgz"
+  "version" "2.2.2"
+  dependencies:
+    "svg.js" "^2.0.1"
+
+"svg.easing.js@^2.0.0":
+  "integrity" "sha1-iqmUawqOJ4V6XEChDrpAkeVpHxI="
+  "resolved" "https://registry.npmjs.org/svg.easing.js/-/svg.easing.js-2.0.0.tgz"
+  "version" "2.0.0"
+  dependencies:
+    "svg.js" ">=2.3.x"
+
+"svg.filter.js@^2.0.2":
+  "integrity" "sha1-kQCOFROJ3ZIwd5/L5uLJo2LRwgM="
+  "resolved" "https://registry.npmjs.org/svg.filter.js/-/svg.filter.js-2.0.2.tgz"
+  "version" "2.0.2"
+  dependencies:
+    "svg.js" "^2.2.5"
+
+"svg.js@^2.0.1", "svg.js@^2.2.5", "svg.js@^2.4.0", "svg.js@^2.6.5", "svg.js@>=2.3.x":
+  "integrity" "sha512-ycbxpizEQktk3FYvn/8BH+6/EuWXg7ZpQREJvgacqn46gIddG24tNNe4Son6omdXCnSOaApnpZw6MPCBA1dODA=="
+  "resolved" "https://registry.npmjs.org/svg.js/-/svg.js-2.7.1.tgz"
+  "version" "2.7.1"
+
+"svg.pathmorphing.js@^0.1.3":
+  "integrity" "sha512-49HWI9X4XQR/JG1qXkSDV8xViuTLIWm/B/7YuQELV5KMOPtXjiwH4XPJvr/ghEDibmLQ9Oc22dpWpG0vUDDNww=="
+  "resolved" "https://registry.npmjs.org/svg.pathmorphing.js/-/svg.pathmorphing.js-0.1.3.tgz"
+  "version" "0.1.3"
+  dependencies:
+    "svg.js" "^2.4.0"
+
+"svg.resize.js@^1.4.3":
+  "integrity" "sha512-9k5sXJuPKp+mVzXNvxz7U0uC9oVMQrrf7cFsETznzUDDm0x8+77dtZkWdMfRlmbkEEYvUn9btKuZ3n41oNA+uw=="
+  "resolved" "https://registry.npmjs.org/svg.resize.js/-/svg.resize.js-1.4.3.tgz"
+  "version" "1.4.3"
+  dependencies:
+    "svg.js" "^2.6.5"
+    "svg.select.js" "^2.1.2"
+
+"svg.select.js@^2.1.2":
+  "integrity" "sha512-tH6ABEyJsAOVAhwcCjF8mw4crjXSI1aa7j2VQR8ZuJ37H2MBUbyeqYr5nEO7sSN3cy9AR9DUwNg0t/962HlDbQ=="
+  "resolved" "https://registry.npmjs.org/svg.select.js/-/svg.select.js-2.1.2.tgz"
+  "version" "2.1.2"
+  dependencies:
+    "svg.js" "^2.2.5"
+
+"svg.select.js@^3.0.1":
+  "integrity" "sha512-h5IS/hKkuVCbKSieR9uQCj9w+zLHoPh+ce19bBYyqF53g6mnPB8sAtIbe1s9dh2S2fCmYX2xel1Ln3PJBbK4kw=="
+  "resolved" "https://registry.npmjs.org/svg.select.js/-/svg.select.js-3.0.1.tgz"
+  "version" "3.0.1"
+  dependencies:
+    "svg.js" "^2.6.5"
 
 "svgo@^1.2.2":
   "integrity" "sha512-yhy/sQYxR5BkC98CY7o31VGsg014AKLEPxdfhora76l36hD9Rdy5NZA/Ocn6yayNPgSamYdtX2rFJdcv07AYVw=="

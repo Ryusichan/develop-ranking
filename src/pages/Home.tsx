@@ -1,16 +1,20 @@
 import React from "react";
 import AutoComplite from "components/toolbox/AutoComplite";
-import { Container, Typography, Button } from "@mui/material";
-import ToggleModeSelect from "components/toolbox/ToggleModeSelect";
+import { Container, Typography, Button, Stack } from "@mui/material";
+import Footer from "components/Footer";
+import MostPopTech from "components/charts/MostPopTech";
+// import ToggleModeSelect from "components/toolbox/ToggleModeSelect";
 
 const Home = () => {
   return (
-    <Container>
-      <ToggleModeSelect />
-      <Typography variant="h4">Most Popular Language?</Typography>
-      <AutoComplite />
-      <Button>dark???</Button>
-    </Container>
+    <Stack>
+      <Container>
+        <Typography variant="h4">Most Popular Language?</Typography>
+        <AutoComplite />
+        <MostPopTech />
+      </Container>
+      <Footer />
+    </Stack>
   );
 };
 

@@ -19,7 +19,6 @@ import shadows, { CustomShadows, customShadows } from "./shadows";
 //
 import shape, { Shape } from "./shape";
 import typography from "./typography";
-import { ColorModeContext } from "components/toolbox/ToggleModeSelect";
 
 // ----------------------------------------------------------------------
 
@@ -33,18 +32,19 @@ export interface ExtendedTheme extends ThemeOptions {
 }
 interface Props {
   children: React.ReactNode;
+  mode: "dark" | "light";
 }
 
-export default function ThemeConfig({ children }: Props) {
-  const [mode, setMode] = React.useState<"light" | "dark">("light");
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-      },
-    }),
-    []
-  );
+export default function ThemeConfig({ children, mode }: Props) {
+  // const [mode, setMode] = React.useState<"light" | "dark">("light");
+  // const colorMode = React.useMemo(
+  //   () => ({
+  //     toggleColorMode: () => {
+  //       setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+  //     },
+  //   }),
+  //   []
+  // );
 
   console.log("mode change???", mode);
 
@@ -68,20 +68,18 @@ export default function ThemeConfig({ children }: Props) {
       customShadows,
       breakpoints,
     }),
-    [mode]
+    []
   );
 
-  const theme = createTheme(themeOptions);
+  const theme = React.useMemo(() => createTheme(themeOptions), [mode]);
   theme.components = componentsOverride(theme);
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          {children}
-        </ThemeProvider>
-      </StyledEngineProvider>
-    </ColorModeContext.Provider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }

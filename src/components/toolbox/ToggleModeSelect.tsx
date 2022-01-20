@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 import { WbSunny, Brightness3 } from "@mui/icons-material";
 import { useSelector } from "react-redux";
+import { Button } from "@mui/material";
 // import { RootState } from "store/store";
 
 export const ColorModeContext = React.createContext({
@@ -35,7 +36,7 @@ export default function ToggleModeSelect() {
       <IconButton
         sx={{ ml: 1, position: "relative", border: "1px solid gray" }}
         onClick={colorMode.toggleColorMode}
-        color="inherit"
+        // color="inherit"
       >
         {/* {theme.palette.mode === "dark" ? <WbSunny /> : <Brightness3 />} */}
         <span
@@ -48,6 +49,7 @@ export default function ToggleModeSelect() {
         <WbSunny />
         <Brightness3 />
       </IconButton>
+      <Button>Drak?????</Button>
     </Box>
   );
 }
