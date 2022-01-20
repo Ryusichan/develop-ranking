@@ -4,82 +4,42 @@ import Router from "./routers/Routes";
 // components
 // import { BaseOptionChartStyle } from "./components/charts/BaseOptionChart";
 
-import IconButton from "@mui/material/IconButton";
-import Box from "@mui/material/Box";
+// import IconButton from "@mui/material/IconButton";
+// import Box from "@mui/material/Box";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import { WbSunny, Brightness3 } from "@mui/icons-material";
+// import { WbSunny, Brightness3 } from "@mui/icons-material";
+// import { ColorModeContext } from "components/toolbox/ToggleModeSelect";
+import ThemeConfig from "theme";
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+export default function App() {
+  // const theme = useTheme();
 
-function MyApp() {
-  const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
+  // const [colorMode, setColorMode] = React.useState(
+  //   theme.palette.mode === "dark" ? "light" : "dark"
+  // );
+
+  // React.useEffect(() => {
+  //   setColorMode(theme.palette.mode);
+  //   console.log("theme", theme.palette.mode);
+  // }, [theme]);
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        width: "100%",
-        alignItems: "center",
-        justifyContent: "center",
-        bgcolor: "background.default",
-        color: "text.primary",
-        borderRadius: 1,
-        p: 3,
-      }}
-    >
-      {theme.palette.mode} mode
-      <IconButton
-        sx={{ ml: 1, position: "relative", border: "1px solid gray" }}
-        onClick={colorMode.toggleColorMode}
-        color="inherit"
+    // <ColorModeContext.Provider value={colorMode}>
+    <ThemeConfig>
+      {/* <ThemeProvider theme={theme}> */}
+      {/* <BaseOptionChartStyle /> */}
+      {/* <MyApp /> */}
+      <div
+        style={
+          {
+            // backgroundColor: `${colorMode === "dark" ? "#121212" : "#fff"}`,
+          }
+        }
       >
-        {/* {theme.palette.mode === "dark" ? <WbSunny /> : <Brightness3 />} */}
-        <span
-          style={{
-            position: "absolute",
-            left: `${theme.palette.mode === "dark" ? "0px" : "45px"}`,
-            backgroundColor: "#000",
-          }}
-        />
-        <WbSunny />
-        <Brightness3 />
-      </IconButton>
-    </Box>
-  );
-}
-
-export default function ToggleColorMode() {
-  const [mode, setMode] = React.useState<"light" | "dark">("light");
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-      },
-    }),
-    []
-  );
-
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode]
-  );
-
-  return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        {/* <BaseOptionChartStyle /> */}
-        <MyApp />
-        <div
-          style={{ backgroundColor: `${mode === "dark" ? "#121212" : "#fff"}` }}
-        >
-          <Router />
-        </div>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+        <Router />
+      </div>
+      {/* </ThemeProvider> */}
+    </ThemeConfig>
+    // </ColorModeContext.Provider>
   );
 }

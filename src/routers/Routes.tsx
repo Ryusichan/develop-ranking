@@ -1,5 +1,5 @@
 import { Navigate, useRoutes, BrowserRouter } from "react-router-dom";
-import Home from "../page/Home";
+import Home from "../pages/Home";
 import React from "react";
 // layouts
 // import DashboardLayout from "../layouts/dashboard";

@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import { alpha, PaletteOptions } from "@mui/material/styles";
 
 // ----------------------------------------------------------------------
@@ -150,6 +151,7 @@ export interface ExtendedPalette extends PaletteOptions {
 }
 
 const palette: ExtendedPalette = {
+  // mode: "dark",
   common: { black: "#000", white: "#fff" },
   primary: { ...PRIMARY },
   secondary: { ...SECONDARY },
