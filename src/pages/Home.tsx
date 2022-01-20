@@ -2,7 +2,7 @@ import React from "react";
 import AutoComplite from "components/toolbox/AutoComplite";
 import { Container, Typography, Button, Stack } from "@mui/material";
 import Footer from "components/Footer";
-import MostPopTech from "components/charts/MostPopTech";
+import MostPopTech from "components/charts/MostPopContent";
 // import ToggleModeSelect from "components/toolbox/ToggleModeSelect";
 
 const Home = () => {

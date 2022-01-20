@@ -3,9 +3,9 @@ import React from "react";
 import { merge } from "lodash";
 import ReactApexChart from "react-apexcharts";
 // material
-import { Card, CardHeader, Box } from "@mui/material";
+import { Card, CardHeader, Box, Button, Stack } from "@mui/material";
 //
-import BaseOptionChart from "./BaseOptionChart";
+import BaseOptionChart from "../BaseOptionChart";
 
 // ----------------------------------------------------------------------
 
@@ -64,9 +64,10 @@ const CHART_DATA = [
 
 export default function MostPopTech() {
   const chartOptions = merge(BaseOptionChart(), {
-    stroke: { width: [0, 2, 3] },
-    plotOptions: { bar: { columnWidth: "11%", borderRadius: 4 } },
-    fill: { type: ["solid", "gradient", "solid"] },
+    stroke: { width: 1 },
+
+    // plotOptions: { bar: { columnWidth: "11%", borderRadius: 4 } },
+    // fill: { type: ["solid", "gradient", "solid"] },
     labels: [
       "2013",
       "2014",
@@ -78,7 +79,10 @@ export default function MostPopTech() {
       "2020",
       "2021",
     ],
-    xaxis: { type: "datetime" },
+    xaxis: {
+      type: "datetime",
+      labels: { format: "yyyy" },
+    },
     colors: [
       "#F44336",
       "#E91E63",
@@ -106,20 +110,12 @@ export default function MostPopTech() {
   });
 
   return (
-    <Box>
-      <CardHeader
-        title="Most popular technologies"
-        // subheader="최근 12개월 저장탱크, START, END 수위가 보여집니다."
-      />
-      <Box sx={{ p: 3, pb: 1 }} dir="ltr">
-        <ReactApexChart
-          type="line"
-          series={CHART_DATA}
-          /* @ts-ignore */
-          options={chartOptions}
-          height={364}
-        />
-      </Box>
-    </Box>
+    <ReactApexChart
+      type="line"
+      series={CHART_DATA}
+      /* @ts-ignore */
+      options={chartOptions}
+      height={380}
+    />
   );
 }
