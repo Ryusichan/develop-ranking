@@ -21,11 +21,15 @@ function MyApp() {
         display: "flex",
         width: "100%",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "right",
         bgcolor: "background.default",
         color: "text.primary",
         borderRadius: 1,
         p: 3,
+        paddingRight: "400px",
+        // position: "absolute",
+        // right: 0,
+        // top: 0,
       }}
     >
       {theme.palette.mode} mode
@@ -34,16 +38,11 @@ function MyApp() {
         onClick={colorMode.toggleColorMode}
         color="inherit"
       >
-        {/* {theme.palette.mode === "dark" ? <WbSunny /> : <Brightness3 />} */}
-        <span
-          style={{
-            position: "absolute",
-            left: `${theme.palette.mode === "dark" ? "0px" : "45px"}`,
-            backgroundColor: "#000",
-          }}
-        />
-        <WbSunny />
-        <Brightness3 />
+        {theme.palette.mode === "dark" ? (
+          <Brightness3 />
+        ) : (
+          <WbSunny style={{ color: "#ff9800" }} />
+        )}
       </IconButton>
     </Box>
   );

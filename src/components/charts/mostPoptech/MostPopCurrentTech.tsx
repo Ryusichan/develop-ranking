@@ -11,59 +11,70 @@ import BaseOptionChart from "../BaseOptionChart";
 
 const CHART_DATA = [
   {
-    name: "JavaScript",
+    name: "2021 ",
     type: "column",
-    data: [56, 58, 54, 55, 62, 69, 67, 67, 64],
+    data: [64, 56, 48, 47, 35, 33, 30, 27, 27, 24],
   },
-  {
-    name: "HTML/CSS",
-    type: "column",
-    data: [0, 0, 0, 0, 0, 68, 63, 63, 56],
-  },
-  {
-    name: "Python",
-    type: "column",
-    data: [21, 23, 23, 24, 32, 38, 41, 44, 48],
-  },
-  {
-    name: "SQL",
-    type: "column",
-    data: [59, 57, 48, 49, 51, 57, 54, 54, 47],
-  },
-  {
-    name: "Java",
-    type: "column",
-    data: [42, 37, 37, 36, 39, 45, 41, 40, 35],
-  },
-  {
-    name: "Node.js",
-    type: "column",
-    data: [7, 9, 13, 17, 0, 0, 0, 0, 33],
-  },
-  {
-    name: "TypeScript",
-    type: "column",
-    data: [4, 4, 4, 4, 9, 17, 21, 25, 30],
-  },
-  {
-    name: "C#",
-    type: "column",
-    data: [44, 37, 31, 30, 34, 34, 31, 31, 27],
-  },
-  {
-    name: "Bash/Shell",
-    type: "column",
-    data: [0, 0, 0, 0, 0, 39, 36, 33, 27],
-  },
-  {
-    name: "C++",
-    type: "column",
-    data: [27, 21, 20, 19, 22, 25, 23, 23, 24],
-  },
+  // {
+  //   name: "HTML/CSS",
+  //   type: "column",
+  //   data: 56,
+  // },
+  // {
+  //   name: "Python",
+  //   type: "column",
+  //   data: 48,
+  // },
+  // {
+  //   name: "SQL",
+  //   type: "column",
+  //   data: 47,
+  // },
+  // {
+  //   name: "Java",
+  //   type: "column",
+  //   data: 35,
+  // },
+  // {
+  //   name: "Node.js",
+  //   type: "column",
+  //   data: 33,
+  // },
+  // {
+  //   name: "TypeScript",
+  //   type: "column",
+  //   data: 30,
+  // },
+  // {
+  //   name: "C#",
+  //   type: "column",
+  //   data: 27,
+  // },
+  // {
+  //   name: "Bash/Shell",
+  //   type: "column",
+  //   data: 27,
+  // },
+  // {
+  //   name: "C++",
+  //   type: "column",
+  //   data: 24,
+  // },
 ];
 
 export default function MostPopCurrentTech() {
   const chartOptions = merge(BaseOptionChart(), {
+    // chart: {
+    //   type: "bar",
+    //   height: "auto",
+    //   stacked: true,
+    // },
+    // plotOptions: {
+    //   bar: {
+    //     horizontal: true,
+    //     endingShape: "rounded",
+    //   },
+    // },
     stroke: { width: 1 },
 
     // plotOptions: { bar: { columnWidth: "11%", borderRadius: 4 } },
@@ -75,8 +86,20 @@ export default function MostPopCurrentTech() {
       // "2021",
     ],
     xaxis: {
-      type: "datetime",
-      labels: { format: "yyyy" },
+      // type: "datetime",
+      // labels: { format: "yyyy" },
+      categories: [
+        "JavaScript",
+        "HTML/CSS",
+        "Python",
+        "SQL",
+        "Java",
+        "Node.js",
+        "TypeScript",
+        "C#",
+        "Bash/Shell",
+        "C++",
+      ],
     },
     colors: [
       "#F44336",

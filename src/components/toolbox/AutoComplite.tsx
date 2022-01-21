@@ -1,5 +1,79 @@
-import React from "react";
-import { Autocomplete, TextField } from "@mui/material";
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
+
+const filter = createFilterOptions<FilmOptionType>();
+
+export default function FreeSoloCreateOption({ value, setValue }: any) {
+  // const [value, setValue] = React.useState<FilmOptionType | null>(null);
+
+  return (
+    <Autocomplete
+      // @ts-ignore
+      value={value}
+      onChange={(event, newValue: any) => {
+        if (typeof newValue === "string") {
+          setValue({
+            title: newValue,
+          });
+        } else if (newValue && newValue.inputValue) {
+          // Create a new value from the user input
+          setValue({
+            title: newValue.inputValue,
+          });
+        } else {
+          setValue(newValue);
+        }
+      }}
+      // @ts-ignore
+      filterOptions={(options, params: any) => {
+        const filtered = filter(options, params);
+
+        const { inputValue } = params;
+        // Suggest the creation of a new value
+        const isExisting = options.some(
+          (option) => inputValue === option.title
+        );
+        if (inputValue !== "" && !isExisting) {
+          filtered.push({
+            inputValue,
+            title: `Add "${inputValue}"`,
+          });
+        }
+
+        return filtered;
+      }}
+      selectOnFocus
+      clearOnBlur
+      handleHomeEndKeys
+      id="free-solo-with-text-demo"
+      options={chartRanking}
+      getOptionLabel={(option: any) => {
+        // Value selected with enter, right from the input
+        if (typeof option === "string") {
+          return option;
+        }
+        // Add "xxx" option created dynamically
+        if (option.inputValue) {
+          return option.inputValue;
+        }
+        // Regular option
+        return option.title;
+      }}
+      renderOption={(props, option) => <li {...props}>{option.title}</li>}
+      freeSolo
+      renderInput={(params) => (
+        <TextField {...params} label="Free solo with text demo" />
+      )}
+    />
+  );
+}
+
+interface FilmOptionType {
+  inputValue?: string;
+  title: string;
+  group?: string;
+}
 
 const chartRanking = [
   { title: "Most popular technologies", group: "most popolar" },
@@ -11,27 +85,3 @@ const chartRanking = [
   { title: "Integrated development environment", group: "most popolar" },
   { title: "Operating system", group: "most popolar" },
 ];
-
-const AutoComplite = () => {
-  return (
-    <Autocomplete
-      freeSolo
-      id="free-solo-2-demo"
-      disableClearable
-      color="primary"
-      options={chartRanking.map((option) => option.title)}
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          label="Search input"
-          InputProps={{
-            ...params.InputProps,
-            type: "search",
-          }}
-        />
-      )}
-    />
-  );
-};
-
-export default AutoComplite;

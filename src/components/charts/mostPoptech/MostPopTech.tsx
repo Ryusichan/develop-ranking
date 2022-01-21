@@ -3,7 +3,6 @@ import React from "react";
 import { merge } from "lodash";
 import ReactApexChart from "react-apexcharts";
 // material
-import { Card, CardHeader, Box, Button, Stack } from "@mui/material";
 //
 import BaseOptionChart from "../BaseOptionChart";
 
@@ -64,7 +63,7 @@ const CHART_DATA = [
 
 export default function MostPopTech() {
   const chartOptions = merge(BaseOptionChart(), {
-    stroke: { width: 1 },
+    stroke: { width: 2, curve: "straight" },
 
     // plotOptions: { bar: { columnWidth: "11%", borderRadius: 4 } },
     // fill: { type: ["solid", "gradient", "solid"] },
@@ -104,6 +103,21 @@ export default function MostPopTech() {
             return `${y.toFixed(0)} %`;
           }
           return y;
+        },
+      },
+    },
+    chart: {
+      animations: {
+        // easing: "easeinout",
+        speed: 500,
+        animateGradually: {
+          enabled: false,
+          // delay: 80,
+        },
+        dynamicAnimation: {
+          // enabled: false,
+          // enabled: true,
+          // speed: 50,
         },
       },
     },

@@ -25,7 +25,7 @@ export default function MostPopContent() {
         justifyContent={"space-between"}
       >
         <CardHeader
-          title="Most popular technologies"
+          title={`${current ? "2021" : ""} Most popular technologies`}
           subheader="Python passed SQL to become our third most popular technology, and Node.JS moves to the sixth most popular technology."
         />
         <Button
@@ -34,7 +34,7 @@ export default function MostPopContent() {
             handleCurrentClick();
           }}
         >
-          2021 technologies
+          {current ? "Trend" : "2021 technologies"}
         </Button>
       </Stack>
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
