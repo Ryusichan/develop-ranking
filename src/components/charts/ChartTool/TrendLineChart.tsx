@@ -8,76 +8,18 @@ import BaseOptionChart from "../BaseOptionChart";
 
 // ----------------------------------------------------------------------
 
-const CHART_DATA = [
-  {
-    name: "JavaScript",
-    type: "line",
-    data: [56, 58, 54, 55, 62, 69, 67, 67, 64],
-  },
-  {
-    name: "HTML/CSS",
-    type: "line",
-    data: [0, 0, 0, 0, 0, 68, 63, 63, 56],
-  },
-  {
-    name: "Python",
-    type: "line",
-    data: [21, 23, 23, 24, 32, 38, 41, 44, 48],
-  },
-  {
-    name: "SQL",
-    type: "line",
-    data: [59, 57, 48, 49, 51, 57, 54, 54, 47],
-  },
-  {
-    name: "Java",
-    type: "line",
-    data: [42, 37, 37, 36, 39, 45, 41, 40, 35],
-  },
-  {
-    name: "Node.js",
-    type: "line",
-    data: [7, 9, 13, 17, 0, 0, 0, 0, 33],
-  },
-  {
-    name: "TypeScript",
-    type: "line",
-    data: [4, 4, 4, 4, 9, 17, 21, 25, 30],
-  },
-  {
-    name: "C#",
-    type: "line",
-    data: [44, 37, 31, 30, 34, 34, 31, 31, 27],
-  },
-  {
-    name: "Bash/Shell",
-    type: "line",
-    data: [0, 0, 0, 0, 0, 39, 36, 33, 27],
-  },
-  {
-    name: "C++",
-    type: "line",
-    data: [27, 21, 20, 19, 22, 25, 23, 23, 24],
-  },
-];
+interface Props {
+  data: Array<any>;
+  option: Array<string>;
+}
 
-export default function MostPopTech() {
+export default function TrendLineChart({ data, option }: Props) {
   const chartOptions = merge(BaseOptionChart(), {
     stroke: { width: 2, curve: "straight" },
 
     // plotOptions: { bar: { columnWidth: "11%", borderRadius: 4 } },
     // fill: { type: ["solid", "gradient", "solid"] },
-    labels: [
-      "2013",
-      "2014",
-      "2015",
-      "2016",
-      "2017",
-      "2018",
-      "2019",
-      "2020",
-      "2021",
-    ],
+    labels: option,
     xaxis: {
       type: "datetime",
       labels: { format: "yyyy" },
@@ -126,10 +68,10 @@ export default function MostPopTech() {
   return (
     <ReactApexChart
       type="line"
-      series={CHART_DATA}
+      series={data}
       /* @ts-ignore */
       options={chartOptions}
-      height={380}
+      height={420}
     />
   );
 }

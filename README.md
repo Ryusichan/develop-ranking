@@ -4,6 +4,8 @@ https://apexcharts.com/
 
 else https://www.chartjs.org/
 
+about https://apexcharts.com/javascript-chart-demos/bar-charts/bar-with-negative-values/
+
 2. how to material ui
 
 autocomplete
