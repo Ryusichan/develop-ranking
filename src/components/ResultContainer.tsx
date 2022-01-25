@@ -1,17 +1,24 @@
-import { FilmOptionType } from "pages/Home";
 import React, { useEffect } from "react";
-import MostPopTech from "./charts/mostPoptech/MostPopTech";
+import { useRecoilState } from "recoil";
+import { CurrentResultState } from "state";
+import MostPopContent from "./charts/MostPopContent";
 
-const ResultContainer = ({ value }: any) => {
-  const [currentResult, setCurrentResult] =
-    React.useState<FilmOptionType | null>(null);
+const ResultContainer = () => {
+  const [value, setValue] = useRecoilState(CurrentResultState);
+
   useEffect(() => {
-    setCurrentResult(value);
+    setValue(value);
     console.log("value", value);
-    console.log("currentResult", currentResult);
+    setValue(value);
+    console.log("currentResult", value);
   }, [value]);
 
-  return <MostPopTech />;
+  if (value.title === "Most popular technologies") {
+    // console.log("Most popular technologies", value);
+    return <MostPopContent />;
+  } else {
+    return <div>{value.title}</div>;
+  }
 };
 
 export default ResultContainer;

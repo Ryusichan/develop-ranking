@@ -10,6 +10,8 @@ import Box from "@mui/material/Box";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 import { WbSunny, Brightness3 } from "@mui/icons-material";
 
+import { RecoilRoot } from "recoil";
+
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function MyApp() {
@@ -72,17 +74,19 @@ export default function ToggleColorMode() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <BaseOptionChartStyle />
-        <MyApp />
-        <Box
-          sx={{
-            bgcolor: "background.default",
-            color: "text.primary",
-          }}
-        >
-          <Router />
-        </Box>
+        <RecoilRoot>
+          <GlobalStyles />
+          <BaseOptionChartStyle />
+          <MyApp />
+          <Box
+            sx={{
+              bgcolor: "background.default",
+              color: "text.primary",
+            }}
+          >
+            <Router />
+          </Box>
+        </RecoilRoot>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
