@@ -10,7 +10,7 @@ const filter = createFilterOptions<FilmOptionType>();
 export default function FreeSoloCreateOption() {
   const [value, setValue] = useRecoilState(CurrentResultState);
 
-  console.log("value", value.title);
+  console.log("value", value ? value.title : "");
 
   const formik = useFormik({
     initialValues: {
@@ -84,7 +84,11 @@ export default function FreeSoloCreateOption() {
           renderOption={(props, option) => <li {...props}>{option.title}</li>}
           freeSolo
           renderInput={(params) => (
-            <TextField {...params} label="Free solo with text demo" />
+            <TextField
+              {...params}
+              label="Please enter the ranking you are curious about.
+            "
+            />
           )}
         />
       </Form>

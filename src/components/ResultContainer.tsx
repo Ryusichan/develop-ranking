@@ -13,11 +13,13 @@ const ResultContainer = () => {
     console.log("currentResult", value);
   }, [value]);
 
-  if (value.title === "Most popular technologies") {
+  let target = value ? value.title : "";
+
+  if (target === "Most popular technologies") {
     // console.log("Most popular technologies", value);
     return <MostPopContent />;
   } else {
-    return <div>{value.title}</div>;
+    return <div>"{target}" is undefained</div>;
   }
 };
 

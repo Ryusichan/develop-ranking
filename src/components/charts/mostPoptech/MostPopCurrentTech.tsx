@@ -11,83 +11,29 @@ import BaseOptionChart from "../BaseOptionChart";
 
 const CHART_DATA = [
   {
-    name: "2021 ",
-    type: "column",
+    name: "technologies",
     data: [64, 56, 48, 47, 35, 33, 30, 27, 27, 24],
   },
-  // {
-  //   name: "HTML/CSS",
-  //   type: "column",
-  //   data: 56,
-  // },
-  // {
-  //   name: "Python",
-  //   type: "column",
-  //   data: 48,
-  // },
-  // {
-  //   name: "SQL",
-  //   type: "column",
-  //   data: 47,
-  // },
-  // {
-  //   name: "Java",
-  //   type: "column",
-  //   data: 35,
-  // },
-  // {
-  //   name: "Node.js",
-  //   type: "column",
-  //   data: 33,
-  // },
-  // {
-  //   name: "TypeScript",
-  //   type: "column",
-  //   data: 30,
-  // },
-  // {
-  //   name: "C#",
-  //   type: "column",
-  //   data: 27,
-  // },
-  // {
-  //   name: "Bash/Shell",
-  //   type: "column",
-  //   data: 27,
-  // },
-  // {
-  //   name: "C++",
-  //   type: "column",
-  //   data: 24,
-  // },
 ];
 
 export default function MostPopCurrentTech() {
   const chartOptions = merge(BaseOptionChart(), {
-    // chart: {
-    //   type: "bar",
-    //   height: "auto",
-    //   stacked: true,
-    // },
-    // plotOptions: {
-    //   bar: {
-    //     horizontal: true,
-    //     endingShape: "rounded",
-    //   },
-    // },
-    stroke: { width: 1 },
-
-    // plotOptions: { bar: { columnWidth: "11%", borderRadius: 4 } },
-    // fill: { type: ["solid", "gradient", "solid"] },
-    labels: [
-      0, 20, 40, 60, 80, 100,
-      // "2019",
-      // "2020",
-      // "2021",
-    ],
+    chart: {
+      type: "bar",
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        endingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: true,
+      formatter: function (val: number) {
+        return val + "%";
+      },
+    },
     xaxis: {
-      // type: "datetime",
-      // labels: { format: "yyyy" },
       categories: [
         "JavaScript",
         "HTML/CSS",
@@ -129,7 +75,7 @@ export default function MostPopCurrentTech() {
 
   return (
     <ReactApexChart
-      type="line"
+      type="bar"
       series={CHART_DATA}
       /* @ts-ignore */
       options={chartOptions}

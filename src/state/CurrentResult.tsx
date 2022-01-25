@@ -6,9 +6,7 @@ export type FilmOptionType = {
   year?: number;
 };
 
-export default atom<FilmOptionType>({
+export default atom<FilmOptionType | null>({
   key: "currentResult",
-  default: {
-    title: "",
-  },
+  default: null,
 });

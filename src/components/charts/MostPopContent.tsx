@@ -11,7 +11,7 @@ import MostPopCurrentTech from "./mostPoptech/MostPopCurrentTech";
 // ----------------------------------------------------------------------
 
 export default function MostPopContent() {
-  const [current, setCurrent] = React.useState<Boolean>(false);
+  const [current, setCurrent] = React.useState<Boolean>(true);
 
   const handleCurrentClick = () => {
     setCurrent(!current);
