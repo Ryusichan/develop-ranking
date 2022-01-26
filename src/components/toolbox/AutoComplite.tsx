@@ -6,7 +6,7 @@ import { CurrentResultState } from "state";
 import { useRecoilState } from "recoil";
 import { Button } from "@mui/material";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const filter = createFilterOptions<FilmOptionType>();
 
@@ -15,91 +15,101 @@ export default function FreeSoloCreateOption() {
 
   const currentValue = value ? value.title : "";
   // console.log("value", value ? value.title : "");
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const formik = useFormik({
-    initialValues: {
-      inputValue: value,
-      title: "",
-      year: 0,
-    },
-    onSubmit: (values) => {
-      console.log("values", values);
-      // setValue(value);
-      navigate(`/search=${values.inputValue ? values.inputValue.title : ""}`);
-    },
-  });
+  React.useEffect(() => {
+    if (value) {
+      navigate(`/result/${value.title}`);
+    }
+  }, [value]);
 
-  const { handleSubmit } = formik;
+  const location = useLocation();
+
+  const bindLocation = React.useMemo(() => {
+    const resultLocation = location.pathname.split("/").pop();
+
+    // if (resultLocation) {
+    //   setValue((value) =>
+    //     value && value.title === resultLocation
+    //       ? { ...value, title: resultLocation }
+    //       : value
+    //   );
+    // }
+
+    return resultLocation;
+  }, [location]);
+
+  console.log("location", bindLocation, typeof bindLocation);
+
+  React.useEffect(() => {
+    if (location.pathname === "/") {
+      setValue(null);
+    }
+  }, [location]);
 
   return (
-    <FormikProvider value={formik}>
-      <Form onSubmit={handleSubmit}>
-        <Autocomplete
-          // @ts-ignore
-          value={value}
-          onChange={(event, newValue: any) => {
-            if (typeof newValue === "string") {
-              setValue({
-                title: newValue,
-              });
-            } else if (newValue && newValue.inputValue) {
-              // Create a new value from the user input
-              setValue({
-                title: newValue.inputValue,
-              });
-            } else {
-              setValue(newValue);
-            }
-          }}
-          // @ts-ignore
-          filterOptions={(options, params: any) => {
-            const filtered = filter(options, params);
+    <Autocomplete
+      // @ts-ignore
+      value={value}
+      onChange={(event, newValue: any) => {
+        if (typeof newValue === "string") {
+          setValue({
+            title: newValue,
+          });
+        } else if (newValue && newValue.inputValue) {
+          // Create a new value from the user input
+          setValue({
+            title: newValue.inputValue,
+          });
+        } else {
+          setValue(newValue);
+        }
+      }}
+      // @ts-ignore
+      filterOptions={(options, params: any) => {
+        const filtered = filter(options, params);
 
-            const { inputValue } = params;
-            // Suggest the creation of a new value
-            const isExisting = options.some(
-              (option) => inputValue === option.title
-            );
-            if (inputValue !== "" && !isExisting) {
-              filtered.push({
-                inputValue,
-                title: `Add "${inputValue}"`,
-              });
-            }
+        const { inputValue } = params;
+        // Suggest the creation of a new value
+        const isExisting = options.some(
+          (option) => inputValue === option.title
+        );
+        if (inputValue !== "" && !isExisting) {
+          filtered.push({
+            inputValue,
+            title: `Add "${inputValue}"`,
+          });
+        }
 
-            return filtered;
-          }}
-          selectOnFocus
-          clearOnBlur
-          handleHomeEndKeys
-          id="free-solo-with-text-demo"
-          options={chartRanking}
-          getOptionLabel={(option: any) => {
-            // Value selected with enter, right from the input
-            if (typeof option === "string") {
-              return option;
-            }
-            // Add "xxx" option created dynamically
-            if (option.inputValue) {
-              return option.inputValue;
-            }
-            // Regular option
-            return option.title;
-          }}
-          renderOption={(props, option) => <li {...props}>{option.title}</li>}
-          freeSolo
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Please enter the ranking you are curious about.
+        return filtered;
+      }}
+      selectOnFocus
+      clearOnBlur
+      handleHomeEndKeys
+      id="free-solo-with-text-demo"
+      options={chartRanking}
+      getOptionLabel={(option: any) => {
+        // Value selected with enter, right from the input
+        if (typeof option === "string") {
+          return option;
+        }
+        // Add "xxx" option created dynamically
+        if (option.inputValue) {
+          return option.inputValue;
+        }
+        // Regular option
+        return option.title;
+      }}
+      renderOption={(props, option) => <li {...props}>{option.title}</li>}
+      freeSolo
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          label="Please enter the ranking you are curious about.
             "
-            />
-          )}
         />
-        <Button type="submit">Submit</Button>
-      </Form>
-    </FormikProvider>
+      )}
+    />
   );
 }
 

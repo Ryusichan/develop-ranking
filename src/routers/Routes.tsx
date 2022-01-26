@@ -22,7 +22,7 @@ const Router = () => {
       ],
     },
     // global
-    { path: "/", element: <Home /> },
+    { path: "/*", element: <Home /> },
   ]);
 };
 
