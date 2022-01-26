@@ -19,6 +19,8 @@ import shadows, { CustomShadows, customShadows } from "./shadows";
 //
 import shape, { Shape } from "./shape";
 import typography from "./typography";
+import { useRecoilState } from "recoil";
+import { ColorModeState } from "state";
 
 // ----------------------------------------------------------------------
 
@@ -32,54 +34,67 @@ export interface ExtendedTheme extends ThemeOptions {
 }
 interface Props {
   children: React.ReactNode;
-  mode: "dark" | "light";
 }
+export const ColorModeContext = React.createContext({
+  toggleColorMode: () => {},
+});
 
-export default function ThemeConfig({ children, mode }: Props) {
-  // const [mode, setMode] = React.useState<"light" | "dark">("light");
-  // const colorMode = React.useMemo(
-  //   () => ({
-  //     toggleColorMode: () => {
-  //       setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-  //     },
-  //   }),
-  //   []
-  // );
+export default function ThemeConfig({ children }: Props) {
+  const [mode, setMode] = useRecoilState(ColorModeState);
 
-  console.log("mode change???", mode);
-
-  const themeLog = useTheme();
-
-  console.log("themeLog", themeLog.palette.mode);
+  // const themeLog = useTheme();
 
   // const prefersDarkMode: boolean = useMediaQuery(
   //   "(prefers-color-scheme: dark)"
   // );
 
-  const themeOptions = useMemo<ExtendedTheme>(
+  // const themeOptions = useMemo<ExtendedTheme>(
+  //   () => ({
+  //     palette: {
+  //       ...palette,
+  //       mode: mode,
+  //     },
+  //     shape,
+  //     typography,
+  //     shadows,
+  //     customShadows,
+  //     breakpoints,
+  //   }),
+  //   []
+  // );
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode]
+  );
+
+  const colorMode = React.useMemo(
     () => ({
-      palette: {
-        ...palette,
-        mode,
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
       },
-      shape,
-      typography,
-      shadows,
-      customShadows,
-      breakpoints,
     }),
     []
   );
 
-  const theme = React.useMemo(() => createTheme(themeOptions), [mode]);
-  theme.components = componentsOverride(theme);
+  console.log("colorMode", colorMode);
+
+  // const theme = createTheme(themeOptions);
+  // theme.components = componentsOverride(theme);
 
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <ColorModeContext.Provider value={colorMode}>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {children}
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </ColorModeContext.Provider>
   );
 }

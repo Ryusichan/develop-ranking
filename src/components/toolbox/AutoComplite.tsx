@@ -4,13 +4,18 @@ import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
 import { Form, FormikProvider, useFormik } from "formik";
 import { CurrentResultState } from "state";
 import { useRecoilState } from "recoil";
+import { Button } from "@mui/material";
+
+import { useNavigate } from "react-router-dom";
 
 const filter = createFilterOptions<FilmOptionType>();
 
 export default function FreeSoloCreateOption() {
   const [value, setValue] = useRecoilState(CurrentResultState);
 
-  console.log("value", value ? value.title : "");
+  const currentValue = value ? value.title : "";
+  // console.log("value", value ? value.title : "");
+  let navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -19,8 +24,9 @@ export default function FreeSoloCreateOption() {
       year: 0,
     },
     onSubmit: (values) => {
-      console.log("values", value);
-      setValue(value);
+      console.log("values", values);
+      // setValue(value);
+      navigate(`/search=${values.inputValue ? values.inputValue.title : ""}`);
     },
   });
 
@@ -91,6 +97,7 @@ export default function FreeSoloCreateOption() {
             />
           )}
         />
+        <Button type="submit">Submit</Button>
       </Form>
     </FormikProvider>
   );
