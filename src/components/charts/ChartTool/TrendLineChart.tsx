@@ -9,8 +9,8 @@ import BaseOptionChart from "../BaseOptionChart";
 // ----------------------------------------------------------------------
 
 interface Props {
-  data: Array<any>;
-  option: Array<string>;
+  data: Array<any> | any;
+  option: Array<string> | any;
 }
 
 export default function TrendLineChart({ data, option }: Props) {
