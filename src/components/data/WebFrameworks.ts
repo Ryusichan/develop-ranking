@@ -1,27 +1,98 @@
-const currentTechData = [
+const currentWFWData = [
   {
     name: "CloudPlatForms",
-    data: [54.2, 31.0, 20.7, 24.0, 17.6, 2.5, 1.8],
+    data: [
+      40.1, 34.4, 23.8, 22.9, 18.9, 18.1, 16.1, 15.7, 14.9, 14.5, 11.4, 10.1,
+      7.0, 3.9, 3.8, 3.8, 2.7, 2.3,
+    ],
   },
 ];
 
-const currentTechOptions = [
-  "AWS",
-  "Google Cloud Platform",
-  "Microsoft Azure",
-  "Heroku",
-  "DigitalOcean",
-  "IBM Cloud or Watson",
-  "Oracle Cloud Infrastructure",
+const currentWFWOptions = [
+  "React.js",
+  "jQuery",
+  "Express",
+  "Angular",
+  "Vue.js",
+  "ASP.NET Core",
+  "Flask",
+  "ASP.NET",
+  "Django",
+  "Spring",
+  "Angular.js",
+  "Laravel",
+  "Ruby on Rails",
+  "Gatsby",
+  "FastAPI",
+  "Symfony",
+  "Svelte",
+  "Drupal",
 ];
 
-const MostTechTitle = "2021 Cloud platforms";
+const WFWData = [
+  {
+    name: "React.js",
+    type: "line",
+    data: [31, 35, 40],
+  },
+  {
+    name: "jQuery",
+    type: "line",
+    data: [48, 43, 34],
+  },
+  {
+    name: "Express",
+    type: "line",
+    data: [19, 21, 23],
+  },
+  {
+    name: "Angular",
+    type: "line",
+    data: [30, 25, 22],
+  },
+  {
+    name: "Vue.js",
+    type: "line",
+    data: [15, 17, 18],
+  },
+  {
+    name: "ASP.NET Core",
+    type: "line",
+    data: [26, 19, 18],
+  },
+  {
+    name: "Flask",
+    type: "line",
+    data: [12, 14, 16],
+  },
+  {
+    name: "ASP.NET",
+    type: "line",
+    data: [26, 19, 15],
+  },
+  {
+    name: "Django",
+    type: "line",
+    data: [13, 14, 14],
+  },
+  {
+    name: "Spring",
+    type: "line",
+    data: [16, 16, 14],
+  },
+];
+
+const WFWOptions = ["2019", "2020", "2021"];
+
+const MostTechTitle = "Web frameworks";
 const MostTechSuqHeader =
-  "AWS maintains its lead as the most widely used cloud platform, but Google Cloud and Microsoft Azure made substantial gains from last year. It is worth noting that this is the first year that we broke out cloud platforms from our general platforms question.";
+  "This year, React.js surpassed jQuery as the most commonly used web framework.";
 
 export default {
-  currentData: currentTechData,
-  currentOptions: currentTechOptions,
+  currentData: currentWFWData,
+  currentOptions: currentWFWOptions,
+  trendData: WFWData,
+  trendOptions: WFWOptions,
   title: MostTechTitle,
   subHeader: MostTechSuqHeader,
 };

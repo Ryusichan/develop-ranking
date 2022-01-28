@@ -33,38 +33,19 @@ const ResultContainer = () => {
 
   let target = value ? value.title : "";
 
-  // type DataType {
-  //   title: undefined | string;
-  //   currentData: undefined | any;
-  //   currentOptions: undefined | any;
-  //   trendData: undefined | any;
-  //   trendOptions: undefined | any;
-  // }
-
   let data: undefined | DataType = undefined;
-
-  // if (target === "Most popular technologies") {
-  //   // console.log("Most popular technologies", value);
-  //   return <MostPopContent />;
-  // } else {
-  //   return <div>"{target}" is undefained</div>;
-  // }
-  // target &&
 
   switch (target) {
     case "Most popular technologies":
       data = MostTechData;
       break;
-    // data= MostPopData;
     case "Most popular Databases":
       data = MostDatabases;
       break;
     case "Cloud platforms":
-      // return <CloudPlatforms />;
       data = CloudPlatforms;
       break;
     case "Web frameworks":
-      // return <WebFrameworks />;
       data = WebFrameworks;
       break;
     default:
@@ -72,7 +53,7 @@ const ResultContainer = () => {
   }
 
   if (data === undefined) {
-    return <div>{target} is undefained</div>;
+    return <div>"{target}" is undefained</div>;
   } else {
     return (
       <RankingBox
