@@ -1,12 +1,16 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
 
-const NotFound = (target: any) => {
+interface Props {
+  message: string;
+}
+
+const NotFound = ({ message }: Props) => {
   return (
     <Stack>
-      {/* <Typography  sx={{ marginBottom: 4, textAlign: "center" }}> */}"
-      {target}" not found
-      {/* </Typography> */}
+      <Typography sx={{ mb: 4, mt: 4, textAlign: "center" }}>
+        "{message}" not found
+      </Typography>
     </Stack>
   );
 };

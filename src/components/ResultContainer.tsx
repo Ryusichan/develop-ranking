@@ -4,6 +4,7 @@ import { CurrentResultState } from "state";
 // import CloudPlatforms from "./charts/CloudPlatforms";
 import MostPopContent from "./charts/MostPopContent";
 import MostPopDatabases from "./charts/MostPopDatebases";
+import NotFound from "./charts/NotFound";
 import RankingBox from "./charts/RankingBox";
 // import WebFrameworks from "./charts/WebFrameworks";
 import CloudPlatforms from "./data/CloudPlatforms";
@@ -53,7 +54,8 @@ const ResultContainer = () => {
   }
 
   if (data === undefined) {
-    return <div>"{target}" is undefained</div>;
+    // return <div>"{target}" is undefained</div>;
+    return <NotFound message={target} />;
   } else {
     return (
       <RankingBox
