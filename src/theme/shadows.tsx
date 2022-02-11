@@ -17,7 +17,7 @@ export interface CustomShadows {
   info: string;
   success: string;
   warning: string;
-  error: string;
+  error?: string;
 }
 
 const LIGHT_MODE = palette.grey[500];
@@ -70,7 +70,7 @@ const createCustomShadow = (color: any): CustomShadows => {
     info: `0 8px 16px 0 ${alpha(palette.info.main, 0.24)}`,
     success: `0 8px 16px 0 ${alpha(palette.success.main, 0.24)}`,
     warning: `0 8px 16px 0 ${alpha(palette.warning.main, 0.24)}`,
-    error: `0 8px 16px 0 ${alpha(palette.error.main, 0.24)}`,
+    // error: `0 8px 16px 0 ${alpha(palette.error.main, 0.24)}`,
   };
 };
 

@@ -1,4 +1,4 @@
-import { useMediaQuery } from "@mui/material";
+import React from "react";
 import { alpha, PaletteOptions } from "@mui/material/styles";
 
 // ----------------------------------------------------------------------
@@ -67,6 +67,16 @@ const PRIMARY: Color = {
   darker: "#1565c0",
   contrastText: "#fff",
 };
+
+const D_PRIMARY: Color = {
+  light: "#b3e5fc",
+  lighter: "#e1f5fe",
+  main: "#42a5f5",
+  dark: "#1976d2",
+  darker: "#1565c0",
+  contrastText: "#fff",
+};
+
 const SECONDARY: Color = {
   lighter: "#D6E4FF",
   light: "#84A9FF",
@@ -76,33 +86,33 @@ const SECONDARY: Color = {
   contrastText: "#fff",
 };
 const INFO: Color = {
-  lighter: "#ede7f6",
-  light: "#b39ddb",
-  main: "#673ab7",
-  dark: "#5e35b1",
-  darker: "#4527a0",
+  lighter: GREY[300],
+  light: GREY[500],
+  main: GREY[700],
+  dark: GREY[800],
+  darker: GREY[900],
   contrastText: "#fff",
 };
 const SUCCESS: Color = {
-  lighter: "#E9FCD4",
-  light: "#AAF27F",
-  main: "#54D62C",
-  dark: "#229A16",
-  darker: "#08660D",
-  contrastText: GREY[800],
+  lighter: "#e3f2fd",
+  light: "#90caf9",
+  main: "#2196f3",
+  dark: "#1e88e5",
+  darker: "#1565c0",
+  contrastText: "#fff",
 };
 const WARNING: Color = {
-  lighter: "#FFF7CD",
-  light: "#FFE16A",
-  main: "#FFC107",
-  dark: "#B78103",
-  darker: "#7A4F01",
+  lighter: "#f6b681",
+  light: "#f2984e  ",
+  main: "#ed6c02",
+  dark: "#be5602",
+  darker: "#8e4101",
   contrastText: GREY[800],
 };
 const ERROR: Color = {
   lighter: "#FFE7D9",
   light: "#FFA48D",
-  main: "#FF4842",
+  main: "#d32f2f",
   dark: "#B72136",
   darker: "#7A0C2E",
   contrastText: "#fff",
@@ -134,7 +144,7 @@ export interface ExtendedPalette extends PaletteOptions {
   info: Color;
   success: Color;
   warning: Color;
-  error: Color;
+  error?: Color;
   grey: Grey;
   gradients: {
     primary: string;
@@ -150,8 +160,18 @@ export interface ExtendedPalette extends PaletteOptions {
   action: any;
 }
 
-const palette: ExtendedPalette = {
-  // mode: "dark",
+function useDarkMode() {
+  // const theme = useRecoilValue(colorModeState)
+  // const theme = useTheme()
+  const [theme, setTheme] = React.useState("dark");
+
+  if (theme === "dark") {
+    return true;
+  }
+  return [theme, setTheme];
+}
+
+export const palette: ExtendedPalette = {
   common: { black: "#000", white: "#fff" },
   primary: { ...PRIMARY },
   secondary: { ...SECONDARY },
@@ -163,8 +183,53 @@ const palette: ExtendedPalette = {
   gradients: GRADIENTS,
   chart: CHART_COLORS,
   divider: GREY[500_24],
-  text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
-  background: { paper: "#fff", default: "#fff", neutral: GREY[200] },
+  text: {
+    // primary: getDarkMode ? GREY[0] : GREY[800],
+    primary: GREY[700],
+    secondary: GREY[600],
+    disabled: GREY[500],
+  },
+  background: {
+    // paper: DarkMode() ? '#121212' : '#fff',
+    // default: DarkMode() ? '#121212' : '#fff',
+    paper: "#fff",
+    default: "#fff",
+    neutral: GREY[200],
+  },
+  action: {
+    active: GREY[600],
+    hover: GREY[500_8],
+    selected: GREY[500_16],
+    disabled: GREY[500_80],
+    disabledBackground: GREY[500_24],
+    focus: GREY[500_24],
+    hoverOpacity: 0.08,
+    disabledOpacity: 0.48,
+  },
+};
+
+export const darkPalette: ExtendedPalette = {
+  common: { black: "#000", white: "#fff" },
+  primary: { ...D_PRIMARY },
+  secondary: { ...SECONDARY },
+  info: { ...INFO },
+  success: { ...SUCCESS },
+  warning: { ...WARNING },
+  // error: { ...ERROR },
+  grey: GREY,
+  gradients: GRADIENTS,
+  chart: CHART_COLORS,
+  divider: GREY[500_24],
+  text: {
+    primary: GREY[0],
+    secondary: GREY[400],
+    disabled: GREY[500],
+  },
+  background: {
+    paper: "#121212",
+    default: "#121212",
+    neutral: GREY[200],
+  },
   action: {
     active: GREY[600],
     hover: GREY[500_8],

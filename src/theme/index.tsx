@@ -1,12 +1,11 @@
 import React from "react";
-// material
 
+// material
 import { CssBaseline, ThemeOptions, useMediaQuery } from "@mui/material";
 import {
   createTheme,
   StyledEngineProvider,
   ThemeProvider,
-  useTheme,
 } from "@mui/material/styles";
 import { TypographyOptions } from "@mui/material/styles/createTypography";
 import { Shadows } from "@mui/material/styles/shadows";
@@ -14,7 +13,7 @@ import { Shadows } from "@mui/material/styles/shadows";
 import { useMemo } from "react";
 import breakpoints, { Breakpoints } from "./breakpoints";
 import componentsOverride from "./overrides";
-import palette, { ExtendedPalette } from "./palette";
+import palette, { darkPalette, ExtendedPalette } from "./palette";
 import shadows, { CustomShadows, customShadows } from "./shadows";
 //
 import shape, { Shape } from "./shape";
@@ -35,41 +34,31 @@ export interface ExtendedTheme extends ThemeOptions {
 interface Props {
   children: React.ReactNode;
 }
+
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},
 });
 
 export default function ThemeConfig({ children }: Props) {
+  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+
+  // console.log('prefersDarkMode', prefersDarkMode)
   const [mode, setMode] = useRecoilState(ColorModeState);
 
-  // const themeLog = useTheme();
+  const isDarkMode: boolean = mode === "dark";
 
-  // const prefersDarkMode: boolean = useMediaQuery(
-  //   "(prefers-color-scheme: dark)"
-  // );
-
-  // const themeOptions = useMemo<ExtendedTheme>(
-  //   () => ({
-  //     palette: {
-  //       ...palette,
-  //       mode: mode,
-  //     },
-  //     shape,
-  //     typography,
-  //     shadows,
-  //     customShadows,
-  //     breakpoints,
-  //   }),
-  //   []
-  // );
-
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
+  const themeOptions = useMemo<ExtendedTheme>(
+    () => ({
+      palette: {
+        ...(isDarkMode ? darkPalette : palette),
+        mode,
+      },
+      shape,
+      typography,
+      shadows,
+      customShadows,
+      breakpoints,
+    }),
     [mode]
   );
 
@@ -82,10 +71,18 @@ export default function ThemeConfig({ children }: Props) {
     []
   );
 
-  console.log("colorMode", colorMode);
+  // const theme = React.useMemo(
+  //   () =>
+  //     createTheme({
+  //       palette: {
+  //         mode,
+  //       },
+  //     }),
+  //   [mode]
+  // );
 
-  // const theme = createTheme(themeOptions);
-  // theme.components = componentsOverride(theme);
+  const theme = createTheme(themeOptions);
+  theme.components = componentsOverride(theme);
 
   return (
     <ColorModeContext.Provider value={colorMode}>

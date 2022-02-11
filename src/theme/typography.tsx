@@ -20,10 +20,10 @@ function responsiveFontSizes({ sm, md, lg }: any) {
   };
 }
 
-const FONT_PRIMARY = "Public Sans, sans-serif";
+// const FONT_PRIMARY = "Public Sans, sans-serif";
 
 const typography: TypographyOptions = {
-  fontFamily: FONT_PRIMARY,
+  // fontFamily: FONT_PRIMARY,
   fontWeightRegular: 400,
   fontWeightMedium: 500,
   fontWeightBold: 600,
@@ -62,7 +62,7 @@ const typography: TypographyOptions = {
     lineHeight: 28 / 18,
     fontSize: pxToRem(17),
     ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
-    color: "#646464",
+    // color: "#646464",
   },
   subtitle1: {
     fontWeight: 500,
@@ -85,7 +85,7 @@ const typography: TypographyOptions = {
   caption: {
     lineHeight: 1.5,
     fontSize: pxToRem(12),
-    color: "#969696",
+    // color: "#969696",
   },
   overline: {
     fontWeight: 600,
