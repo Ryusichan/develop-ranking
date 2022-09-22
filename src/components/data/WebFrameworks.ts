@@ -88,6 +88,8 @@ const MostTechTitle = "Web frameworks";
 const MostTechSuqHeader =
   "This year, React.js surpassed jQuery as the most commonly used web framework.";
 
+const responses = 67593;
+
 export default {
   currentData: currentWFWData,
   currentOptions: currentWFWOptions,
@@ -95,4 +97,5 @@ export default {
   trendOptions: WFWOptions,
   title: MostTechTitle,
   subHeader: MostTechSuqHeader,
+  responses: responses,
 };

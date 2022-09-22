@@ -94,6 +94,8 @@ const MostTechTitle = "Most Popular Technologies";
 const MostTechSuqHeader =
   "Python passed SQL to become our third most popular technology, and Node.JS moves to the sixth most popular technology.";
 
+  const responses = 83052;
+
 export default {
   currentData: currentTechData,
   currentOptions: currentTechOptions,
@@ -101,4 +103,5 @@ export default {
   trendOptions: MostTechOptions,
   title: MostTechTitle,
   subHeader: MostTechSuqHeader,
+  responses: responses,
 };

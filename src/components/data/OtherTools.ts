@@ -84,6 +84,8 @@ const MostTechTitle = "Other tools";
 const MostTechSuqHeader =
   "Over 90% of respondents use Git, suggesting that it is a fundamental tool to being a developer.";
 
+const responses = 76253;
+
 export default {
   currentData: currentOTData,
   currentOptions: currentOTOptions,
@@ -91,4 +93,5 @@ export default {
   trendOptions: OTOptions,
   title: MostTechTitle,
   subHeader: MostTechSuqHeader,
+  responses,
 };

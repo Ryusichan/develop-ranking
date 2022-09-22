@@ -25,6 +25,8 @@ const currentDatabaseData = [
   const MostTechTitle = "Learning & problem solving";
   const MostTechSuqHeader =
     "Respondents most often use Google when they get stuck or visit Stack Overflow.";
+
+    const responses = 83052;
   
   export default {
     currentData: currentDatabaseData,
@@ -33,5 +35,6 @@ const currentDatabaseData = [
     trendOptions: DatabaseOptions,
     title: MostTechTitle,
     subHeader: MostTechSuqHeader,
+    responses,
   };
   

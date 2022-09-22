@@ -84,6 +84,8 @@ const MostTechTitle = "Most popular Databases";
 const MostTechSuqHeader =
   "The most common databases are consistent between all respondents and professional developers. The only difference we observed is that professional developers are slightly more likely to use Microsoft SQL Server over MongoDB.";
 
+  const responses = 73317;
+
 export default {
   currentData: currentDatabaseData,
   currentOptions: currentDatabaseOptions,
@@ -91,4 +93,5 @@ export default {
   trendOptions: DatabaseOptions,
   title: MostTechTitle,
   subHeader: MostTechSuqHeader,
+  responses,
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 // material
-import { CardHeader, Box, Button, Stack } from "@mui/material";
+import { CardHeader, Box, Button, Stack, Typography } from "@mui/material";
 //
 import BarChart from "./ChartTool/BarChart";
 import TrendLineChart from "./ChartTool/TrendLineChart";
@@ -16,6 +16,7 @@ export default function RankingBox({
   subHeader,
   trendData,
   trendOptions,
+  responses,
 }: DataType) {
   const [trend, settrend] = React.useState<Boolean>(true);
 
@@ -28,6 +29,7 @@ export default function RankingBox({
   const handletrendClick = () => {
     settrend(!trend);
   };
+  const response = responses.toLocaleString();
 
   return (
     <Box>
@@ -56,6 +58,12 @@ export default function RankingBox({
           <TrendLineChart data={trendData} option={trendOptions} />
         )}
       </Box>
+      <Stack>
+        <Typography variant="body2" sx={{ textAlign: "center", mb: 4 }} >
+          * The data is based on the survey of {response} developers from over 170
+          countries, conducted by Stack Overflow in January 2022.
+        </Typography>
+      </Stack>
     </Box>
   );
 }

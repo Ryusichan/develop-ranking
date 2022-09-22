@@ -74,6 +74,8 @@ const currentDatabaseData = [
   const MostTechSuqHeader =
     "Windows continues to be the most popular operating system, though slightly less so among professional developers. This year was also the first time we added WSL as an option.";
   
+    const responses = 82719
+
   export default {
     currentData: currentDatabaseData,
     currentOptions: currentDatabaseOptions,
@@ -81,5 +83,6 @@ const currentDatabaseData = [
     trendOptions: DatabaseOptions,
     title: MostTechTitle,
     subHeader: MostTechSuqHeader,
+    responses,
   };
   

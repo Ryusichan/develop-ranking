@@ -25,6 +25,7 @@ export type DataType = {
   trendOptions?: Array<any>;
   title: string;
   subHeader: string;
+  responses: number;
 };
 
 const ResultContainer = () => {
@@ -85,6 +86,7 @@ const ResultContainer = () => {
         trendOptions={data.trendOptions}
         title={data.title}
         subHeader={data.subHeader}
+        responses={data.responses}
       />
     );
   }

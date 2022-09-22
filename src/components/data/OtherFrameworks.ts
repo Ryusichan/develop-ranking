@@ -83,6 +83,8 @@ const MostTechTitle = "Other frameworks and libraries";
 const MostTechSuqHeader =
   "The .NET framework gets the most love in other technologies, though several data science libraries for Python make strong showings.";
 
+const responses = 59921;
+
 export default {
   currentData: currentOFData,
   currentOptions: currentOFOptions,
@@ -90,4 +92,5 @@ export default {
   trendOptions: OFOptions,
   title: MostTechTitle,
   subHeader: MostTechSuqHeader,
+  responses,
 };

@@ -84,6 +84,8 @@ const currentDatabaseData = [
   const MostTechSuqHeader =
     "Visual Studio Code has a significant lead as the IDE of choice across all developers.";
   
+const responses = 82277;
+
   export default {
     currentData: currentDatabaseData,
     currentOptions: currentDatabaseOptions,
@@ -91,5 +93,6 @@ const currentDatabaseData = [
     trendOptions: DatabaseOptions,
     title: MostTechTitle,
     subHeader: MostTechSuqHeader,
+    responses,
   };
   
