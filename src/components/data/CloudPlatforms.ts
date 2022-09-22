@@ -15,7 +15,7 @@ const currentTechOptions = [
   "Oracle Cloud Infrastructure",
 ];
 
-const MostTechTitle = "2021 Cloud platforms";
+const MostTechTitle = "Cloud platforms";
 const MostTechSuqHeader =
   "AWS maintains its lead as the most widely used cloud platform, but Google Cloud and Microsoft Azure made substantial gains from last year. It is worth noting that this is the first year that we broke out cloud platforms from our general platforms question.";
 

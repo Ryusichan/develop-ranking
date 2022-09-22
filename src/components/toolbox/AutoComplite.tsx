@@ -127,5 +127,6 @@ const chartRanking = [
   { title: "Other frameworks and libraries", group: "most popolar" },
   { title: "Other tools", group: "most popolar" },
   { title: "Integrated development environment", group: "most popolar" },
-  { title: "Operating system", group: "most popolar" },
+  { title: "Operating systems", group: "most popolar" },
+  { title: "Problem Solving", group: "most popolar" },
 ];

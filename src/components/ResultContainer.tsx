@@ -12,6 +12,11 @@ import MostDatabases from "./data/MostDatabases";
 import MostPopData from "./data/MostPopData";
 import MostTechData from "./data/MostPopData";
 import WebFrameworks from "./data/WebFrameworks";
+import ProblemSolving from "./data/ProblemSolving";
+import OtherFrameworks from "./data/OtherFrameworks";
+import OtherTools from "./data/OtherTools";
+import IntegratedEnvironment from "./data/IntegratedEnvironment";
+import OperatingSystem from "./data/Operating system";
 // import { MostTechData } from "./data/MostPopData";
 export type DataType = {
   currentData: Array<any>;
@@ -48,6 +53,21 @@ const ResultContainer = () => {
       break;
     case "Web frameworks":
       data = WebFrameworks;
+      break;
+    case "Other frameworks and libraries":
+      data = OtherFrameworks;
+      break;
+    case "Other tools":
+      data = OtherTools;
+      break;
+      case "Integrated development environment" :
+        data = IntegratedEnvironment;
+        break;
+        case "Operating systems" :
+          data = OperatingSystem;
+          break;
+    case "Problem Solving":
+      data = ProblemSolving;
       break;
     default:
       data = undefined;
