@@ -17,6 +17,7 @@ import OtherFrameworks from "./data/OtherFrameworks";
 import OtherTools from "./data/OtherTools";
 import IntegratedEnvironment from "./data/IntegratedEnvironment";
 import OperatingSystem from "./data/Operating system";
+import MostSearch from "./charts/MostSearch";
 // import { MostTechData } from "./data/MostPopData";
 export type DataType = {
   currentData: Array<any>;
@@ -76,7 +77,8 @@ const ResultContainer = () => {
 
   if (data === undefined) {
     // return <div>"{target}" is undefained</div>;
-    return <NotFound message={target} />;
+    // return <NotFound message={target} />;
+    return <MostSearch/>
   } else {
     return (
       <RankingBox
