@@ -18,9 +18,9 @@ https://mui.com/components/material-icons/
 
 3. develop-ranking source use stack-overflow ranking
 
-have to year 2021 -> 2015 to 2021 source collect
+have to year 2022 -> 2015 to 2022 source collect
 
-https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies
+https://insights.stackoverflow.com/survey/2022#technology-most-popular-technologies
 
 4. Design mock up sample
 
