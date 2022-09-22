@@ -78,7 +78,7 @@ const currentDatabaseData = [
     },
   ];
   
-  const DatabaseOptions = ["2017", "2018", "2019", "2020", "2021"];
+  const DatabaseOptions = ["2017", "2018", "2019", "2020", "2022"];
   
   const MostTechTitle = "Integrated development environment";
   const MostTechSuqHeader =

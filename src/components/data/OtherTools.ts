@@ -78,7 +78,7 @@ const OTData = [
   },
 ];
 
-const OTOptions = ["2019", "2020", "2021"];
+const OTOptions = ["2019", "2020", "2022"];
 
 const MostTechTitle = "Other tools";
 const MostTechSuqHeader =

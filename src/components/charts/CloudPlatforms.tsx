@@ -34,7 +34,7 @@ export default function CloudPlatforms() {
         justifyContent={"space-between"}
       >
         <CardHeader
-          title={"2021 Cloud platforms"}
+          title={"2022 Cloud platforms"}
           subheader="AWS maintains its lead as the most widely used cloud platform, but Google Cloud and Microsoft Azure made substantial gains from last year. It is worth noting that this is the first year that we broke out cloud platforms from our general platforms question."
         />
       </Stack>

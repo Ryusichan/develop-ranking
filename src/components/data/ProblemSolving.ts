@@ -20,7 +20,7 @@ const currentDatabaseData = [
     "Visit another developer community",
   ];
   
-  const DatabaseOptions = ["2017", "2018", "2019", "2020", "2021"];
+  const DatabaseOptions = ["2017", "2018", "2019", "2020", "2022"];
   
   const MostTechTitle = "Learning & problem solving";
   const MostTechSuqHeader =

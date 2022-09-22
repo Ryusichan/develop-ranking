@@ -1,10 +1,10 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
-import { Form, FormikProvider, useFormik } from "formik";
+// import { Form, FormikProvider, useFormik } from "formik";
 import { CurrentResultState } from "state";
 import { useRecoilState } from "recoil";
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -13,7 +13,7 @@ const filter = createFilterOptions<FilmOptionType>();
 export default function FreeSoloCreateOption() {
   const [value, setValue] = useRecoilState(CurrentResultState);
 
-  const currentValue = value ? value.title : "";
+  // const currentValue = value ? value.title : "";
   // console.log("value", value ? value.title : "");
   const navigate = useNavigate();
 

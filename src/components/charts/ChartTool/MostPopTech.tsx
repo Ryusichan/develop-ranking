@@ -76,7 +76,7 @@ export default function MostPopTech() {
       "2018",
       "2019",
       "2020",
-      "2021",
+      "2022",
     ],
     xaxis: {
       type: "datetime",

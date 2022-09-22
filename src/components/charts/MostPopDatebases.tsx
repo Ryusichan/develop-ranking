@@ -95,7 +95,7 @@ export default function MostPopDatabases() {
     },
   ];
 
-  const DatabaseOptions = ["2017", "2018", "2019", "2020", "2021"];
+  const DatabaseOptions = ["2017", "2018", "2019", "2020", "2022"];
 
   return (
     <Box>
@@ -105,7 +105,7 @@ export default function MostPopDatabases() {
         justifyContent={"space-between"}
       >
         <CardHeader
-          title={`${current ? "2021" : ""} Most popular Databases`}
+          title={`${current ? "2022" : ""} Most popular Databases`}
           subheader="The most common databases are consistent between all respondents and professional developers. The only difference we observed is that professional developers are slightly more likely to use Microsoft SQL Server over MongoDB."
         />
         <Button
@@ -114,7 +114,7 @@ export default function MostPopDatabases() {
             handleCurrentClick();
           }}
         >
-          {current ? "Trend" : "2021 technologies"}
+          {current ? "Trend" : "2022 technologies"}
         </Button>
       </Stack>
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">

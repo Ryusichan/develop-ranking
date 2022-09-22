@@ -99,7 +99,7 @@ export default function WebFrameworks() {
     },
   ];
 
-  const WFWOptions = ["2019", "2020", "2021"];
+  const WFWOptions = ["2019", "2020", "2022"];
 
   return (
     <Box>
@@ -109,7 +109,7 @@ export default function WebFrameworks() {
         justifyContent={"space-between"}
       >
         <CardHeader
-          title={`${current ? "2021" : ""} Web frameworks`}
+          title={`${current ? "2022" : ""} Web frameworks`}
           subheader="This year, React.js surpassed jQuery as the most commonly used web framework."
         />
         <Button
@@ -118,7 +118,7 @@ export default function WebFrameworks() {
             handleCurrentClick();
           }}
         >
-          {current ? "Trend" : "2021 technologies"}
+          {current ? "Trend" : "2022 technologies"}
         </Button>
       </Stack>
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">

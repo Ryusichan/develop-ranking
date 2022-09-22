@@ -37,7 +37,7 @@ export default function RankingBox({
         justifyContent={"space-between"}
       >
         <CardHeader
-          title={`${trend ? "2021" : ""} ${title}`}
+          title={`${trend ? "2022" : ""} ${title}`}
           subheader={subHeader}
         />
         <Button
@@ -46,7 +46,7 @@ export default function RankingBox({
             handletrendClick();
           }}
         >
-          {trend ? "Trend" : "2021 technologies"}
+          {trend ? "Trend" : "2022 technologies"}
         </Button>
       </Stack>
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
