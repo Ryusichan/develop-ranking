@@ -1,0 +1,24 @@
+{
+  "title": "modal",
+  "innerText": "inner Text",
+  "buttonAction": [
+    {
+      "text": "cancel",
+      "type": "button",
+      "state": "active",
+      "color": "inherit",
+      "size": "large",
+      "variant": "outlined",
+      "mode": "light"
+    },
+    {
+      "text": "Click",
+      "type": "button",
+      "state": "active",
+      "color": "primary",
+      "size": "large",
+      "variant": "contained",
+      "mode": "light"
+    }
+  ]
+}

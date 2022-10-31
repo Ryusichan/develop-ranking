@@ -3,12 +3,12 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Container sx={{ borderTop: "1px solid gray", minHeight: 300 }}>
+    <Container sx={{ borderTop: "1px solid gray", minHeight: 250 }}>
       <Stack
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{ minHeight: 300 }}
+        sx={{ minHeight: 250 }}
       >
         <Stack
           direction="column"

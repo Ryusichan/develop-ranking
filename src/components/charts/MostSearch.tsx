@@ -26,8 +26,8 @@ const MostSearch = () => {
 
   return (
     <Stack sx={{ mt: 8, mb: 8 }}>
-      <Stack direction={"row"}>
-        <Stack sx={{ flex: 1}}>
+      <Stack direction={"row"} spacing={4}>
+        <Stack sx={{ flex: 1, border: "1px solid gray", p: 4, borderRadius: "8px"}}>
         <Stack>
           <Typography variant="h4" sx={{ mb: 4, mt: 4}}>
           Most searched features
@@ -47,7 +47,7 @@ const MostSearch = () => {
         </Stack>
         </Stack>
 
-            <Stack sx={{ flex: 1}}>
+            <Stack sx={{ flex: 1, border: "1px solid gray", p: 4, borderRadius: "8px"}}>
               <Stack>
               <Typography variant="h4" sx={{ mb: 4, mt: 4, textAlign: "center" }}>
                 Technology
