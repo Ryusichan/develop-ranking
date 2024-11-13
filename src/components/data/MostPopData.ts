@@ -1,28 +1,64 @@
-const currentTechData = [
+const currentTechDataData = [
   {
+    day: "2022",
     name: "technologies",
     data: [
-      64.9, 56.0, 48.2, 47.0, 35.3, 33.9, 30.1, 27.8, 27.1, 24.3, 21.9, 21.0,
-      10.7, 9.5,
+      { name: "JavaScript", per: 65.3 },
+      { name: "HTML/CSS", per: 55.0 },
+      { name: "SQL", per: 49.4 },
+      { name: "Python", per: 48.0 },
+      { name: "TypeScript", per: 34.8 },
+      { name: "Java", per: 33.2 },
+      { name: "Bash/Shell", per: 29.0 },
+      { name: "C#", per: 27.9 },
+      { name: "C++", per: 22.5 },
+      { name: "PHP", per: 20.8 },
+      { name: "C", per: 19.2 },
+      { name: "PowerShell", per: 12.0 },
+      { name: "Go", per: 11.1 },
+      { name: "Rust", per: 9.3 },
     ],
   },
-];
-
-const currentTechOptions = [
-  "JavaScript",
-  "HTML/CSS",
-  "Python",
-  "SQL",
-  "Java",
-  "Node.js",
-  "TypeScript",
-  "C#",
-  "Bash/Shell",
-  "C++",
-  "PHP",
-  "C",
-  "PowerShell",
-  "Go",
+  {
+    day: "2023",
+    name: "technologies",
+    data: [
+      { name: "JavaScript", per: 63.6 },
+      { name: "HTML/CSS", per: 52.9 },
+      { name: "Python", per: 49.2 },
+      { name: "SQL", per: 48.6 },
+      { name: "TypeScript", per: 38.8 },
+      { name: "Bash/Shell", per: 32.3 },
+      { name: "Java", per: 30.3 },
+      { name: "C#", per: 27.6 },
+      { name: "C++", per: 22.4 },
+      { name: "C", per: 19.3 },
+      { name: "PHP", per: 18.5 },
+      { name: "PowerShell", per: 13.5 },
+      { name: "Go", per: 13.24 },
+      { name: "Rust", per: 13.0 },
+    ],
+  },
+  {
+    day: "2024",
+    name: "technologies",
+    data: [
+      { name: "JavaScript", per: 62.3 },
+      { name: "HTML/CSS", per: 52.9 },
+      { name: "Python", per: 51 },
+      { name: "SQL", per: 51 },
+      { name: "TypeScript", per: 38.5 },
+      { name: "Bash/Shell", per: 33.9 },
+      { name: "Java", per: 30.3 },
+      { name: "C#", per: 27.1 },
+      { name: "C++", per: 23 },
+      { name: "C", per: 20.3 },
+      { name: "PHP", per: 18.2 },
+      { name: "PowerShell", per: 13.8 },
+      { name: "Go", per: 13.5 },
+      { name: "Rust", per: 12.6 },
+    ],
+  },
 ];
 
 const MostTechData = [
@@ -88,17 +124,18 @@ const MostTechOptions = [
   "2019",
   "2020",
   "2022",
+  "2023",
+  "2024",
 ];
 
 const MostTechTitle = "Most Popular Technologies";
 const MostTechSuqHeader =
   "Python passed SQL to become our third most popular technology, and Node.JS moves to the sixth most popular technology.";
 
-  const responses = 83052;
+const responses = 83052;
 
 export default {
-  currentData: currentTechData,
-  currentOptions: currentTechOptions,
+  currentData: currentTechDataData,
   trendData: MostTechData,
   trendOptions: MostTechOptions,
   title: MostTechTitle,

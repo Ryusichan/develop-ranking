@@ -21,7 +21,6 @@ import MostSearch from "./charts/MostSearch";
 // import { MostTechData } from "./data/MostPopData";
 export type DataType = {
   currentData: Array<any>;
-  currentOptions: Array<any>;
   trendData?: Array<any>;
   trendOptions?: Array<any>;
   title: string;
@@ -62,12 +61,12 @@ const ResultContainer = () => {
     case "Other tools":
       data = OtherTools;
       break;
-      case "Integrated development environment" :
-        data = IntegratedEnvironment;
-        break;
-        case "Operating systems" :
-          data = OperatingSystem;
-          break;
+    case "Integrated development environment":
+      data = IntegratedEnvironment;
+      break;
+    case "Operating systems":
+      data = OperatingSystem;
+      break;
     case "Problem Solving":
       data = ProblemSolving;
       break;
@@ -78,12 +77,11 @@ const ResultContainer = () => {
   if (data === undefined) {
     // return <div>"{target}" is undefained</div>;
     // return <NotFound message={target} />;
-    return <MostSearch/>
+    return <MostSearch />;
   } else {
     return (
       <RankingBox
         currentData={data.currentData}
-        currentOptions={data.currentOptions}
         trendData={data.trendData}
         trendOptions={data.trendOptions}
         title={data.title}
