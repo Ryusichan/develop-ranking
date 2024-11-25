@@ -1,4 +1,4 @@
-const currentTechDataData = [
+const currentTechData = [
   {
     day: "2022",
     name: "technologies",
@@ -135,7 +135,7 @@ const MostTechSuqHeader =
 const responses = 83052;
 
 export default {
-  currentData: currentTechDataData,
+  currentData: currentTechData,
   trendData: MostTechData,
   trendOptions: MostTechOptions,
   title: MostTechTitle,
