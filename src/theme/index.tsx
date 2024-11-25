@@ -40,9 +40,6 @@ export const ColorModeContext = React.createContext({
 });
 
 export default function ThemeConfig({ children }: Props) {
-  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-
-  // console.log('prefersDarkMode', prefersDarkMode)
   const [mode, setMode] = useRecoilState(ColorModeState);
 
   const isDarkMode: boolean = mode === "dark";

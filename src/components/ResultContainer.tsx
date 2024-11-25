@@ -33,9 +33,6 @@ const ResultContainer = () => {
 
   useEffect(() => {
     setValue(value);
-    console.log("value", value);
-
-    console.log("currentResult", value);
   }, [value]);
 
   let target = value ? value.title : "";

@@ -39,8 +39,6 @@ export default function FreeSoloCreateOption() {
     return resultLocation;
   }, [location]);
 
-  console.log("location", bindLocation, typeof bindLocation);
-
   React.useEffect(() => {
     if (location.pathname === "/") {
       setValue(null);

@@ -15,6 +15,8 @@ import {
 import BarChart from "./ChartTool/BarChart";
 import TrendLineChart from "./ChartTool/TrendLineChart";
 import { DataType } from "components/ResultContainer";
+import { useRecoilValue } from "recoil";
+import { CurrentResultState } from "state";
 
 // ----------------------------------------------------------------------
 
@@ -31,6 +33,8 @@ export default function RankingBox({
   const [selectedDay, setSelectedDay] = useState<string>("2024");
   const [currentTechOptions, setCurrentTechOptions] = useState<any>([]);
   const [currentTechData, setCurrentTechData] = useState<any>(null);
+
+  const titleValue = useRecoilValue(CurrentResultState);
 
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -57,7 +61,9 @@ export default function RankingBox({
     }
   };
 
-  console.log("currentTechOptions", currentTechOptions);
+  useEffect(() => {
+    setSelectedDay("2024");
+  }, [titleValue]);
 
   useEffect(() => {
     setLoading(true);
@@ -85,12 +91,6 @@ export default function RankingBox({
 
     fetchData(selectedDay);
   }, [selectedDay, currentData]);
-
-  // if (trendData === undefined) {
-  //   settrend(false);
-  // }
-
-  console.log("trendData", trendData);
 
   const handletrendClick = () => {
     settrend(!trend);
