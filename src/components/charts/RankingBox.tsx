@@ -33,6 +33,40 @@ export default function RankingBox({
   const [selectedDay, setSelectedDay] = useState<string>("2024");
   const [currentTechOptions, setCurrentTechOptions] = useState<any>([]);
   const [currentTechData, setCurrentTechData] = useState<any>(null);
+  const [trendTotalData, setTrendTotalData] = useState<any>([]);
+  const [isTrend, setIsTrendData] = React.useState<Boolean>(true);
+
+  useEffect(() => {
+    settrend(true);
+  }, [currentData]);
+
+  useEffect(() => {
+    if (title === "Cloud platforms" || "Integrated development environment") {
+      setIsTrendData(false);
+    }
+  }, []);
+
+  console.log("trendData", trendData);
+  console.log("currentTechOptions", currentTechOptions);
+  console.log("currentTechData", currentTechData);
+
+  const result = trendData?.map((db) => {
+    const updatedData = [...db.data];
+
+    currentData.forEach((yearData) => {
+      const matchingEntry = yearData.data.find(
+        (entry: any) => entry.name === db.name
+      );
+      if (matchingEntry) {
+        updatedData.push(matchingEntry.per);
+      }
+    });
+
+    return {
+      ...db,
+      data: updatedData,
+    };
+  });
 
   const titleValue = useRecoilValue(CurrentResultState);
 
@@ -94,6 +128,7 @@ export default function RankingBox({
 
   const handletrendClick = () => {
     settrend(!trend);
+    setSelectedDay("2024");
   };
   const response = responses.toLocaleString();
 
@@ -133,14 +168,16 @@ export default function RankingBox({
             }}
           />
         </Stack>
-        <Button
-          variant={"outlined"}
-          onClick={() => {
-            handletrendClick();
-          }}
-        >
-          {trend ? "Trend" : "2024 technologies"}
-        </Button>
+        {result && (
+          <Button
+            variant={"outlined"}
+            onClick={() => {
+              handletrendClick();
+            }}
+          >
+            {trend ? "Trend" : "2024 technologies"}
+          </Button>
+        )}
       </Stack>
       {loading ? (
         <Stack
@@ -160,7 +197,7 @@ export default function RankingBox({
           {trend ? (
             <BarChart data={currentTechData} option={currentTechOptions} />
           ) : (
-            <TrendLineChart data={trendData} option={trendOptions} />
+            <TrendLineChart data={result} option={trendOptions} />
           )}
         </Box>
       )}
