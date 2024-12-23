@@ -117,22 +117,22 @@ const DatabaseData = [
   {
     name: "Redis",
     type: "line",
-    data: [0, 18.0, 18.6, 18.3, 20.6],
+    data: [null, 18.0, 18.6, 18.3, 20.6],
   },
   {
     name: "MariaDB",
     type: "line",
-    data: [0, 13.4, 16.5, 16.8, 17.1],
+    data: [null, 13.4, 16.5, 16.8, 17.1],
   },
   {
     name: "Firebase",
     type: "line",
-    data: [0, 0, 12.8, 14.4, 16.1],
+    data: [null, null, 12.8, 14.4, 16.1],
   },
   {
     name: "Elasticsearch",
     type: "line",
-    data: [0, 14.1, 14.3, 13.8, 13.2],
+    data: [null, 14.1, 14.3, 13.8, 13.2],
   },
   {
     name: "Oracle",
@@ -141,7 +141,16 @@ const DatabaseData = [
   },
 ];
 
-const DatabaseOptions = ["2017", "2018", "2019", "2020", "2022"];
+const DatabaseOptions = [
+  "2017",
+  "2018",
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+];
 
 const MostTechTitle = "Most popular Databases";
 const MostTechSuqHeader =

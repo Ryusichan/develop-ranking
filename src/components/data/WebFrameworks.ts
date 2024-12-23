@@ -135,7 +135,7 @@ const WFWData = [
   },
 ];
 
-const WFWOptions = ["2019", "2020", "2022"];
+const WFWOptions = ["2019", "2020", "2021", "2022", "2023", "2024"];
 
 const MostTechTitle = "Web frameworks";
 const MostTechSuqHeader =

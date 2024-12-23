@@ -70,7 +70,7 @@ const MostTechData = [
   {
     name: "HTML/CSS",
     type: "line",
-    data: [0, 0, 0, 0, 0, 68, 63, 63, 56],
+    data: [null, null, null, null, null, 68, 63, 63, 56],
   },
   {
     name: "Python",
@@ -90,7 +90,7 @@ const MostTechData = [
   {
     name: "Node.js",
     type: "line",
-    data: [7, 9, 13, 17, 0, 0, 0, 0, 33],
+    data: [7, 9, 13, 17, null, null, null, null, 33],
   },
   {
     name: "TypeScript",
@@ -105,7 +105,7 @@ const MostTechData = [
   {
     name: "Bash/Shell",
     type: "line",
-    data: [0, 0, 0, 0, 0, 39, 36, 33, 27],
+    data: [null, null, null, null, null, 39, 36, 33, 27],
   },
   {
     name: "C++",

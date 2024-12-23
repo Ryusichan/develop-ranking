@@ -130,7 +130,7 @@ const OFData = [
   },
 ];
 
-const OFOptions = ["2019", "2020", "2022"];
+const OFOptions = ["2019", "2020", "2021", "2022", "2023", "2024"];
 
 const MostTechTitle = "Other frameworks and libraries";
 const MostTechSuqHeader =
