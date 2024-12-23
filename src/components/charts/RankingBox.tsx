@@ -33,7 +33,6 @@ export default function RankingBox({
   const [selectedDay, setSelectedDay] = useState<string>("2024");
   const [currentTechOptions, setCurrentTechOptions] = useState<any>([]);
   const [currentTechData, setCurrentTechData] = useState<any>(null);
-  const [trendTotalData, setTrendTotalData] = useState<any>([]);
   const [isTrend, setIsTrendData] = React.useState<Boolean>(true);
 
   useEffect(() => {
@@ -45,10 +44,6 @@ export default function RankingBox({
       setIsTrendData(false);
     }
   }, []);
-
-  console.log("trendData", trendData);
-  console.log("currentTechOptions", currentTechOptions);
-  console.log("currentTechData", currentTechData);
 
   const result = trendData?.map((db) => {
     const updatedData = [...db.data];
